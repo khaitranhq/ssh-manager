@@ -1,3 +1,4 @@
 package configs
 
 const CONFIG_FILE_PATH = "~/.config/ssh_manager/config.json"
+const KEYS_PATH = "~/.config/ssh_manager/keys/"

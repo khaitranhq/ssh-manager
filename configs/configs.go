@@ -8,7 +8,7 @@ import (
 
 type Connection struct {
 	Host     string `json:"host"`
-	KeyPath  string `json:"key_path"`
+	KeyName  string `json:"key_path"`
 	UserName string `json:"user_name"`
 	Password string `json:"password"`
 }
@@ -28,4 +28,9 @@ func LoadConfigs() []Group {
 	}
 
 	return []Group{}
+}
+
+func SaveConfigs(groups []Group) {
+	file, _ := json.MarshalIndent(groups, "", " ")
+	ioutil.WriteFile(CONFIG_FILE_PATH, file, 0644)
 }
